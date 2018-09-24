@@ -2,3 +2,5 @@ env
 *.DS_Store
 *.pyc
 __pycache__
+*.sqlite3
+db.sqlite3-journal
