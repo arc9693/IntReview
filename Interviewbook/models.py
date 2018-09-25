@@ -2,8 +2,14 @@ from django.db import models
 from django.utils import timezone
 
 
+class Company(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
 class InterviewResponse(models.Model):
-    company = models.CharField(max_length=200)
+    company = models.ForeignKey(Company,on_delete=models.CASCADE)
     job_profile = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
     rounds = models.IntegerField(blank=True, null=True)

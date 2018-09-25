@@ -1,0 +1,22 @@
+{% extends 'Interviewbook/base.html' %}
+
+{% block content %}
+
+  <div class="container-fluid" id="home">
+    <div class="row m-0">
+      <div class="col-6 blank">
+      </div>
+      <div class="col-6">
+        <div class="row pt-5 options">
+          <div class="col-12 m-2 d-flex justify-content-center">
+              <a href="ListResponses"><i class="fas fa-eye text-warning bg-dark fa-4x p-lg-5 p-4 border border-warning" data-toggle="tooltip" data-placement="top" title="view responses"></i></a>
+          </div>
+          <div class="col-12 m-2 d-flex justify-content-center">
+            <a href="response/new"><i class="fas fa-plus text-warning bg-dark fa-5x p-lg-5 p-4 border border-warning" data-toggle="tooltip" data-placement="top" title="submit a response"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

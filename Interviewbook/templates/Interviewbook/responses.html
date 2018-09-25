@@ -1,0 +1,9 @@
+{% extends 'Interviewbook/base.html' %}
+
+{% block content %}
+<div class="">
+  {% for response in responses %}
+  <a href="response/{{response.id}}"><button class="btn btn-primary" type="button" name="button">{{ response.id }}</button></a>
+  {% endfor %}
+</div>
+{% endblock %}

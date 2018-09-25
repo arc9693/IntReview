@@ -1,17 +1,19 @@
 from django.http import HttpResponse
-from .forms import ResponseForm
-from django.shortcuts import redirect,render
+from .forms import *
+from django.shortcuts import redirect,render,get_object_or_404
 from django.utils import timezone
+from .models import *
 
 def index(request):
-    return HttpResponse("choose : 1.view response 2.submit response")
+    return render(request, 'Interviewbook/index.html')
 
 def ListResponses(request):
-    return HttpResponse("1 2 3 4 5")
+    responses = InterviewResponse.objects.filter(timestamp__lte=timezone.now()).order_by('timestamp')
+    return render(request, 'Interviewbook/responses.html', {'responses': responses})
 
 def viewResponse(request, response_id):
-    response = "You're looking at the results of question %s."
-    return HttpResponse(response % response_id)
+    response = get_object_or_404(InterviewResponse, id=response_id)
+    return render(request, 'Interviewbook/response.html', {'response': response})
 
 def response_new(request):
     if request.method == "POST":
@@ -23,3 +25,13 @@ def response_new(request):
     else:
         form = ResponseForm()
     return render(request, 'Interviewbook/Responseform.html', {'form': form})
+
+def add_company(request):
+    if request.method == "POST":
+        form = CompanyForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('response_new')
+    else:
+        form = CompanyForm()
+    return render(request, 'Interviewbook/CompanyForm.html', {'form': form})
