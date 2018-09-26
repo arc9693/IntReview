@@ -6,7 +6,9 @@ urlpatterns = [
 
     path('ListResponses', views.ListResponses, name='ListResponses'),
 
-    path('response/<int:response_id>', views.viewResponse, name='viewResponse'),
+    path('ListResponses/search', views.ListResponsesbyCompany, name='ListResponsesbyCompany'),
+
+    path('ListResponses/response/<int:response_id>', views.viewResponse, name='viewResponse'),
 
     path('response/new', views.response_new, name='response_new'),
 

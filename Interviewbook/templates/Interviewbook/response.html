@@ -1,9 +1,30 @@
 {% extends 'Interviewbook/base.html' %}
 
 {% block content %}
-<div class="container">
-  {{response.name}}<br>
-  {{response.questions}}<br>
-  {{response.compensation}}
+<div class="container m-5 bg-dark text-warning p-2">
+  <div class="border border-warning">
+        <div class="row m-3">
+          Name : {{response.name}}
+        </div>
+        <div class="row m-3">
+          Company : {{response.company}}
+        </div>
+        <div class="row m-3">
+          Job Profile : {{response.job_profile}}
+        </div>
+        <div class="row m-3">
+          Compensation in INR: {{response.compensation}}
+        </div>
+        <div class="row m-3">
+          No of rounds : {{response.rounds}}
+        </div>
+        <div class="row m-3">
+          Questions: {{response.questions}}
+        </div>
+        <div class="row m-3">
+          Rating: {{response.rating}}
+        </div>
+  </div>
 </div>
+
 {% endblock %}
