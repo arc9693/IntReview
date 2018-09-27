@@ -6,7 +6,7 @@ class ResponseForm(ModelForm):
         model = InterviewResponse
         fields = ('name','company','job_profile','rounds','questions','compensation','rating')
         widgets = {
-            'questions': Textarea(attrs={'cols': 115, 'rows': 5}),
+            'questions': Textarea(attrs={'rows': 5}),
         }
 
 class CompanyForm(ModelForm):

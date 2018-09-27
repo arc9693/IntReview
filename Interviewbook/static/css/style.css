@@ -44,6 +44,6 @@ body{
 }
 #id_questions , #responseQuestions{
 	display: inherit;
-	width: -moz-available;
+	width: 100%;
   min-height: 30vh;
 }
