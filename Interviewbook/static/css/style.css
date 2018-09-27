@@ -13,17 +13,20 @@ body{
 {
   font-family: 'Cedarville Cursive', cursive;
 }
+.form-control {
+	width: auto;
+}
 .options i:hover{
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 .newResponse select{
-  min-width: 100%;
+
+	width: -moz-available;
 }
 .newResponse input{
-  min-width: 100%;
+	width: -moz-available;
 }
 .newResponse #submit{
-  min-width: 20%;
   border: none;
   padding: 5px;
 }
@@ -38,4 +41,9 @@ body{
 }
 .CompanyForm #submit:hover{
     background-color: #ffc107;
+}
+#id_questions , #responseQuestions{
+	display: inherit;
+	width: -moz-available;
+  min-height: 30vh;
 }
