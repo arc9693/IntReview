@@ -30,6 +30,19 @@ def viewResponse(request, response_id):
     response.increase()
     return render(request, 'Interviewbook/response.html', {'response': response})
 
+
+def updateResponse(request, response_id):
+    instance = get_object_or_404(InterviewResponse, id=response_id)
+    form = ResponseForm(request.POST or None, instance=instance)
+    if form.is_valid():
+        form.save()
+        return redirect('index')
+    return render(request, 'Interviewbook/Responseform.html', {'form': form})
+
+def deleteResponse(request,response_id):
+    instance = get_object_or_404(InterviewResponse, id=response_id).delete()
+    return redirect('ListResponses')
+
 def response_new(request):
     if request.method == "POST":
         form = ResponseForm(request.POST)

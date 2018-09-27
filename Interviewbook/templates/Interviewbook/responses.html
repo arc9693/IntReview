@@ -27,10 +27,12 @@
             <i class="fas fa-eye" data-toggle="tooltip" data-placement="top" title="views"> {{response.hits}}</i>
           </div>
           <div class="col border-left border-warning p-2">
-            <i class="fas fa-trash-alt"></i> Delete
+            <a href="ListResponses/response/{{response.id}}/delete" class="text-warning">
+            <i class="fas fa-trash-alt"></i> Delete</a>
           </div>
           <div class="col border-left border-warning p-2">
-            <i class="fas fa-edit"></i> Edit
+            <a href="ListResponses/response/{{response.id}}/update" class="text-warning">
+            <i class="fas fa-edit"></i> Edit</a>
           </div>
         </div>
       </div>

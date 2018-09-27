@@ -10,6 +10,10 @@ urlpatterns = [
 
     path('ListResponses/response/<int:response_id>', views.viewResponse, name='viewResponse'),
 
+    path('ListResponses/response/<int:response_id>/update',views.updateResponse, name='updateResponse'),
+
+    path('ListResponses/response/<int:response_id>/delete',views.deleteResponse, name='deleteResponse'),
+
     path('response/new', views.response_new, name='response_new'),
 
     path('response/new/addCompany', views.add_company, name='add_company'),
