@@ -42,6 +42,11 @@ body{
 .CompanyForm #submit:hover{
     background-color: #ffc107;
 }
+
+.CompanyForm #id_name{
+    width: 100%;
+}
+
 #id_questions , #responseQuestions{
 	display: inherit;
 	width: 100%;
