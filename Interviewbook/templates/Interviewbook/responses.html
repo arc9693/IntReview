@@ -13,19 +13,29 @@
   </nav>
 
 
-  {% for response in responses %}
-    <a href="ListResponses/response/{{response.id}}" class="list-group-item list-group-item-action bg-dark text-warning mt-2 ml-1 d-flex justify-content-between ">
-      <div class="">
-      <span class="font-weight-bold">{{response.job_profile}} </span> at <span class="font-weight-bold"> {{response.company}}</span>
-      </div>
-      <div class="d-flex-inline p-0 m-0">
-        <span class="font-italic d-inline-flex">- {{response.name}}</span>
-        <div class=" d-inline-flex">
-            <i class="fas fa-eye border-left border-warning pl-1" data-toggle="tooltip" data-placement="top" title="views"> {{response.hits}}</i>
+
+
+      {% for response in responses %}
+    <div class="row bg-dark text-warning mt-2 ml-1 p-1">
+      <a href="ListResponses/response/{{response.id}}" class="text-warning col-lg-9 col-sm-12 p-2">
+          <span class="font-weight-bold">{{response.job_profile}} </span> at <span class="font-weight-bold"> {{response.company}}</span>
+            <span class="font-italic d-inline-flex">- {{response.name}}</span>
+      </a>
+      <div class="col-lg-3 col-sm-12 border border-warning">
+        <div class="row">
+          <div class="col border-left border-warning p-2">
+            <i class="fas fa-eye" data-toggle="tooltip" data-placement="top" title="views"> {{response.hits}}</i>
+          </div>
+          <div class="col border-left border-warning p-2">
+            <i class="fas fa-trash-alt"></i> Delete
+          </div>
+          <div class="col border-left border-warning p-2">
+            <i class="fas fa-edit"></i> Edit
+          </div>
         </div>
       </div>
-    </a>
-  {% endfor %}
+    </div>
+      {% endfor %}
 
   <nav aria-label="Page navigation list-group-item list-group-item-action bg-dark text-warning">
   <ul class="pagination pagination-sm mt-5">
