@@ -9,7 +9,7 @@ def index(request):
     return render(request, 'Interviewbook/index.html')
 
 def ListResponses(request):
-    responses = InterviewResponse.objects.filter(timestamp__lte=timezone.now()).order_by('timestamp')
+    responses = InterviewResponse.objects.filter(timestamp__lte=timezone.now()).order_by('-timestamp')
     paginator = Paginator(responses, 10) # Show 10 responses per page
     page = request.GET.get('page')
     responses = paginator.get_page(page)
@@ -18,7 +18,7 @@ def ListResponses(request):
 def ListResponsesbyCompany(request):
     query=request.GET['company']
     company= get_object_or_404(Company, name=query)
-    responses = InterviewResponse.objects.filter(company= company.id).order_by('hits')
+    responses = InterviewResponse.objects.filter(company= company.id).order_by('-hits')
     paginator = Paginator(responses, 10) # Show 10 responses per page
     page = request.GET.get('page')
     responses = paginator.get_page(page)
