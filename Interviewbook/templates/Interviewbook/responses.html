@@ -17,7 +17,7 @@
 
       {% for response in responses %}
     <div class="row bg-dark text-warning mt-2 ml-1 p-1">
-      <a href="ListResponses/response/{{response.id}}" class="text-warning col-lg-9 col-sm-12 p-2">
+      <a href="{% url 'viewResponse' response.id %}" class="text-warning col-lg-9 col-sm-12 p-2">
           <span class="font-weight-bold">{{response.job_profile}} </span> at <span class="font-weight-bold"> {{response.company}}</span>
             <span class="font-italic d-inline-flex">- {{response.name}}</span>
       </a>
@@ -27,11 +27,11 @@
             <i class="fas fa-eye" data-toggle="tooltip" data-placement="top" title="views"> {{response.hits}}</i>
           </div>
           <div class="col border-left border-warning p-2">
-            <a href="ListResponses/response/{{response.id}}/delete" class="text-warning">
+            <a href="{% url 'deleteResponse' response.id %}" class="text-warning">
             <i class="fas fa-trash-alt"></i> Delete</a>
           </div>
           <div class="col border-left border-warning p-2">
-            <a href="ListResponses/response/{{response.id}}/update" class="text-warning">
+            <a href="{% url 'updateResponse' response.id %}" class="text-warning">
             <i class="fas fa-edit"></i> Edit</a>
           </div>
         </div>
