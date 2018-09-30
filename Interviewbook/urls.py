@@ -17,4 +17,10 @@ urlpatterns = [
     path('response/new', views.response_new, name='response_new'),
 
     path('response/new/addCompany', views.add_company, name='add_company'),
+
+    path('signup', views.signup, name='signup'),
+
+    path('login',views.login_view, name='login'),
+
+    path('logout',views.logout_view, name='logout'),
 ]

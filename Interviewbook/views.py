@@ -4,9 +4,47 @@ from django.shortcuts import redirect,render,get_object_or_404
 from django.utils import timezone
 from .models import *
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.contrib.auth import login, authenticate,logout
+from django.contrib.auth.forms import UserCreationForm
 
 def index(request):
     return render(request, 'Interviewbook/index.html')
+
+def signup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('index')
+    else:
+        form = UserCreationForm()
+    return render(request, 'Interviewbook/signup.html', {'form': form})
+
+def login_view(request):
+    _message = 'Log in'
+    if request.method == 'POST':
+        _username = request.POST['username']
+        _password = request.POST['password']
+        user = authenticate(username=_username, password=_password)
+        if user is not None:
+            if user.is_active:
+                login(request,user)
+                return redirect('index')
+            else:
+                _message = 'Your account is not activated'
+        else:
+            _message = 'Invalid login, please try again.'
+    context = {'message': _message}
+    return render(request, 'Interviewbook/login.html', context)
+
+def logout_view(request):
+    logout(request)
+    return redirect('index')
+
 
 def ListResponses(request):
     responses = InterviewResponse.objects.filter(timestamp__lte=timezone.now()).order_by('-timestamp')

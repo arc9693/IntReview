@@ -8,7 +8,11 @@
   <form method="post" class="ml-lg-5 mr-lg-5 mb-lg-5 mt-lg-2 m-1  bg-dark text-warning p-lg-5 p-3 newResponse">
     {% csrf_token %}
     {{ form.as_p }}<br>
-  <input type="submit" name="submit" value="Upload" id="submit">
+    {% if user.is_authenticated %}
+    <input type="submit" name="submit" value="Upload" id="submit">
+    {% else %}
+    <a href="{% url 'login' %}"><button class="btn btn-sm btn-outline-warning my-2 my-sm-0"> You neeed to Login first!</button></a>
+    {% endif %}
   </form>
 </div>
 
