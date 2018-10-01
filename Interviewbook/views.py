@@ -1,11 +1,14 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .forms import *
-from django.shortcuts import redirect,render,get_object_or_404
+from django.shortcuts import redirect,render,get_object_or_404,reverse
+from django.urls import reverse
 from django.utils import timezone
 from .models import *
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.contrib.auth import login, authenticate,logout
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 def index(request):
     return render(request, 'Interviewbook/index.html')
@@ -68,26 +71,26 @@ def viewResponse(request, response_id):
     response.increase()
     return render(request, 'Interviewbook/response.html', {'response': response})
 
-
+@login_required(login_url='login')
 def updateResponse(request, response_id):
     instance = get_object_or_404(InterviewResponse, id=response_id)
     form = ResponseForm(request.POST or None, instance=instance)
-    if form.is_valid():
+    if form.is_valid() and instance.name.pk==request.user.pk:
         form.save()
         return redirect('index')
     return render(request, 'Interviewbook/Responseform.html', {'form': form})
 
+@login_required(login_url='login')
 def deleteResponse(request,response_id):
-    instance = get_object_or_404(InterviewResponse, id=response_id).delete()
+    if instance.name.pk==request.user.pk:
+        instance = get_object_or_404(InterviewResponse, id=response_id).delete()
     return redirect('ListResponses')
 
 def response_new(request):
     if request.method == "POST":
         form = ResponseForm(request.POST)
-        if form.is_valid():
-            form.hits=0
-            form.timestamp = timezone.now()
-            form.save()
+        if form.is_valid() and request.user.is_authenticated:
+            form.save(user_id=request.user.pk)
             return redirect('index')
     else:
         form = ResponseForm()

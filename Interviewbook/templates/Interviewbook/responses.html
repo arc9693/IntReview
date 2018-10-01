@@ -22,10 +22,9 @@
             <span class="font-italic d-inline-flex">- {{response.name}}</span>
       </a>
       <div class="col-lg-3 col-sm-12 border border-warning">
-        <div class="row">
-          <div class="col border-left border-warning p-2">
-            <i class="fas fa-eye" data-toggle="tooltip" data-placement="top" title="views"> {{response.hits}}</i>
-          </div>
+        <div class="row align-middle justify-content-center d-flex">
+         {% if response.name.pk == user.pk %}
+
           <div class="col border-left border-warning p-2">
             <a href="{% url 'deleteResponse' response.id %}" class="text-warning">
             <i class="fas fa-trash-alt"></i> Delete</a>
@@ -34,6 +33,9 @@
             <a href="{% url 'updateResponse' response.id %}" class="text-warning">
             <i class="fas fa-edit"></i> Edit</a>
           </div>
+          {% else %}
+          <i class="fas fa-eye p-2" data-toggle="tooltip" data-placement="top" title="views"> {{response.hits}}</i>
+         {% endif %}
         </div>
       </div>
     </div>
