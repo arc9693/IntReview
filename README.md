@@ -5,9 +5,10 @@
 ![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)<br>
 An app that records various interview responses and publicise them.
 
+## Contribution guidelines
+Kindly follow [contributing.md](contributing.md), if you want to lend a hand in making this project better.
+
 ## Build Setup
-#### Requirements
-Python 3.6.3
 
 ```bash
 #creating virtual env
