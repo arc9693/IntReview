@@ -1,6 +1,7 @@
 # IntReview
 [![Build Status](https://travis-ci.org/arc9693/IntReview.svg?branch=master)](https://travis-ci.org/arc9693/IntReview)
-![Python Versions](https://img.shields.io/pypi/pyversions/django.svg?style=flat)<br>
+![Python Versions](https://img.shields.io/pypi/pyversions/django.svg?style=flat)
+[![Join the chat at https://gitter.im/NIT-dgp/General](https://badges.gitter.im/NIT-dgp/General.svg)](https://gitter.im/NIT-dgp/General?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)<br>
 ![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)<br>
 ![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)<br>
 An app that records various interview responses and publicise them.
