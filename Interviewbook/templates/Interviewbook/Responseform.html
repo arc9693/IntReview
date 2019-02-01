@@ -11,7 +11,7 @@
     {% if user.is_authenticated %}
     <input type="submit" name="submit" value="Upload" id="submit">
     {% else %}
-    <a href="{% url 'login' %}"><button class="btn btn-sm btn-outline-warning my-2 my-sm-0"> You neeed to Login first!</button></a>
+    <a href="{% url 'login' %}"><button type="button" class="btn btn-primary">You neeed to Login first!</button></a>
     {% endif %}
   </form>
 </div>
