@@ -96,6 +96,7 @@ def response_new(request):
         form = ResponseForm()
     return render(request, 'Interviewbook/Responseform.html', {'form': form})
 
+@login_required(login_url='login')
 def add_company(request):
     if request.method == "POST":
         form = CompanyForm(request.POST)
