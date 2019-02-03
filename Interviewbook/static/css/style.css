@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Cedarville+Cursive');
 body{
-  background-color: #ffc107;
+  background-color: pink;
   max-width: 100vw;
+  margin: 0;
+ padding:0;
+
+  font-family: sans-serif;
 }
 #home{
   background-image: url('../images/3.jpg');
@@ -52,3 +56,91 @@ body{
 	width: 100%;
   min-height: 30vh;
 }
+.loginbox{
+   width:380px;
+   height: 650px;
+   background:#000;
+   color:#fff;
+   top:60%;
+    left:50%;
+    position:absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box:
+   }
+   h1{
+  margin: 0;
+  padding: 0 0 20px;
+  text-align:center;
+  font-size:22px;
+   }
+ .loginbox p{
+   margin: 2px;
+   font-weight:bold;
+   }
+  .loginbox input{
+   width:100%;
+   margin-bottom: 20px;
+}
+  .loginbox input[type="text"],input[type="password"]
+  { border:none;
+    border-bottom: 1px solid white;
+     background:transparent;
+    outline:none;
+    height:40px;
+    color:white;
+    font-size:16px;
+ }
+  .loginbox input[type="submit"]
+{  border:none;
+   outline:none;
+   height:40px;
+   background:#fb2525;
+   color:white;
+    font-size:18px;
+}
+ .loginbox input[type="submit"]:hover
+ { cursor:pointer;
+   background:#ffc107;
+   color:black;
+ }
+ .logginbox{
+    width:380px;
+    height: 360px;
+    background:black;
+    color:white;
+    top:65%;
+     left:50%;
+     position:absolute;
+     transform: translate(-50%,-50%);
+     box-sizing: border-box;
+    }
+    .logginbox p{
+   margin: 2px;
+   font-weight:bold;
+   }
+  .logginbox input{
+   width:100%;
+   margin-bottom: 20px;
+}
+  .logginbox input[type="text"],input[type="password"]
+  { border:2px solid black;
+    border-radius:8px;
+     background:transparent;
+
+    height:40px;
+    color:black;
+    font-size:16px;
+ }
+  .logginbox input[type="submit"]
+{  border:3px solid black;
+   border-radius:4px;
+   height:40px;
+   background:#fb2525;
+   color:white;
+    font-size:18px;
+}
+ .logginbox input[type="submit"]:hover
+ { cursor:pointer;
+   background:#ffc107;
+   color:black;
+ }

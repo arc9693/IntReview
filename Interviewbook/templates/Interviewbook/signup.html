@@ -1,10 +1,27 @@
 {% extends 'Interviewbook/base.html' %}
 
 {% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign up</button>
-  </form>
+  <h1>Sign up</h1>
+  <div class="loginbox">
+
+   <h1>Sign up</h1>
+   <form method="post">
+     <p>Username</p>
+   <input type="text" name="user" placeholder="enter username">
+   <ul><li>Required. 150 characters or fewer.Letters<br> digits and @/,/+/-/_only,</li>
+    </ul>
+   <p>Password</p>
+   <input type="password" name="passwd" placeholder="enter password">
+   <ul><li>Your password cant be too similar to your<br> other personal information</li>
+   <li>Your password must contain at least 8<br>characters</li>
+   <li>Your password cant be a commonly used<br>password</li>
+    <li>Your password cant be entirely numeric</li>
+   </ul>
+   <p>Confirm password</p>
+ <input type="password" name="passwd" placeholder="enter password">
+   <ul><li>Enter the same password as before<br>for verification</li></ul>
+    <input type="submit" name="" value="SIGN UP"><br>
+   </form>
+ </div>
+  
 {% endblock %}
