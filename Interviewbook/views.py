@@ -84,7 +84,7 @@ def updateResponse(request, response_id):
 def deleteResponse(request,response_id):
     instance = get_object_or_404(InterviewResponse, id=response_id)
     if instance.name.pk==request.user.pk:
-        instance = get_object_or_404(InterviewResponse, id=response_id).delete()
+        form.delete()
     return redirect('ListResponses')
 
 def response_new(request):
