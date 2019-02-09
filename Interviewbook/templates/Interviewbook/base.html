@@ -21,11 +21,12 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div class="navbar-nav ml-md-auto d-md-flex">
       {% if user.is_authenticated %}
-      <a href="{% url 'logout' %}"><button class="btn btn-sm my-2 my-sm-0 m-1" style="color:#528CDD;">Logout</button></a>
-      {% else %}
-        <a href="{% url 'login' %}"><button class="btn btn-sm  my-2 my-sm-0 m-1" id="loginBtn">
-          <strong>Login</strong></button></a>
-        <a href="{% url 'signup' %}"><button class="btn btn-sm my-2 my-sm-0 m-1" id="signBtn">
+      <a href="{% url 'logout' %}"><button class="btn btn-sm my-2 my-sm-0 m-1 navBtn">
+        <strong>Logout</strong></button></a>
+    {% else %}
+      <a href="{% url 'login' %}"><button class="btn btn-sm  my-2 my-sm-0 m-1 navBtn">
+        <strong>Login</strong></button></a>
+      <a href="{% url 'signup' %}"><button class="btn btn-sm my-2 my-sm-0 m-1 navBtn">
           <strong>Signup</strong></button></a>
       {% endif %}
     </div>

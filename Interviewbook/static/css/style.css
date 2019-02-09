@@ -22,11 +22,11 @@ nav{
 .navbar-brand{
   font-family: 'Cedarville Cursive', cursive;
 }
-#loginBtn ,#signBtn{
+.navBtn{
   background: #34495e;
   color:#ddd;
 }
-#loginBtn:hover,#signBtn:hover{
+.navBtn:hover{
   color:white;
 }
 .footer{
@@ -44,7 +44,7 @@ nav{
 
 /*INDEX.HTML FILE STYLING*/
 #title{
-  color:#40CFFF;
+  color:#00BFFF;
   font-size: 300%;
 }
 .buttonLink{
@@ -58,8 +58,21 @@ nav{
   color:#fff;
 }
 #Exp{
-  color:#1A7DC5;
-  font-size:120%;
+  /*background-color: #565656;*/
+  /*color:white;
+  text-shadow: 0 0 20px rgba(198,28,39,0.8), 0 0 0 black;
+  text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
+  -webkit-background-clip: text;
+     -moz-background-clip: text;
+          background-clip: text;*/
+    /*font: bold 100px arial, sans-serif; */
+  /*background-color: #34495e;*/
+  color: #127BC4;
+  /*text-shadow: 2px 2px 3px #74b9ff;
+  -webkit-background-clip: text;
+     -moz-background-clip: text;
+          background-clip: text;*/
+  font-size: 130%;
 }
 #deskImg{
   max-height:90vh;
@@ -105,4 +118,20 @@ nav{
   display: inherit;
   width: 100%;
   min-height: 30vh;
+}
+
+
+
+#listq:hover{
+  /*box-shadow:1px 1px 1px grey;*/
+  /*background-color: #ddd;*/
+}
+#line{
+  width:100%;
+  color:black;
+}
+
+#loginCard{
+  background: #ffffff;
+  box-shadow: 1px 1px 1px #bbb;
 }
