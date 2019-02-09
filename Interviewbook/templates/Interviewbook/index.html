@@ -2,23 +2,33 @@
 
 {% block content %}
 
-  <div class="container-fluid" id="home">
-    <div class="row m-0">
-      <div class="col-6 blank">
-      </div>
-      <div class="col-6">
-        <div class="row pt-5 options">
-          <div class="col-12 m-2 d-flex justify-content-center">
-              <a class ="text-warning bg-dark p-1 text-center" href="ListResponses"><i class="fas fa-eye  fa-4x p-lg-5 p-4 border border-warning" data-toggle="tooltip" data-placement="top" title="view responses"></i>
-              <br>view</a>
-          </div>
-          <div class="col-12 m-2 d-flex justify-content-center">
-            <a class ="text-warning bg-dark p-1 text-center" href="response/new"><i class="fas fa-plus  fa-5x p-lg-5 p-4 border border-warning" data-toggle="tooltip" data-placement="top" title="submit a response"></i>
-            <br>submit</a>
-          </div>
-        </div>
-      </div>
+<div class="container" id="home">
+  <div class="row m-0">
+
+      <!-- TEXT BLOCK -->
+    <div class=" col-sm-12 col-md-4 col-lg-6 blank mt-auto mb-auto" style="vertical-align:middle;display: inline-block;">  
+      <h1 id="title">Create <br>An <strong id="Exp">Experience</strong><br> Yourself</h1>
+      <p>
+        <div class="text-muted text-small">An <strong>app</strong> that lets you create and learn from other's interviews.</div>
+      </p>
+        <!--VIEW AND SUBMIT BUTTONS -->
+      <a class="buttonLink btn" href="ListResponses" >
+        <i class="fas fa-eye" data-toggle="tooltip" data-placement="top" title="view responses"></i>&nbsp;View
+      </a>&nbsp;
+      <a class="buttonLink btn" href="response/new">
+        <i class="fas fa-plus" data-toggle="tooltip" data-placement="top" title="submit a response"></i>
+          Submit
+      </a>
+    </div>
+
+    <!-- PICTURE BLOCK -->
+    <div class="col-sm-12 col-md-8 col-lg-6">
+      {% load static %}
+       <img class="img-responsive" id="deskImg" src="{% static 'images/4.png' %}"
+       style="max-height:90vh;max-width:90vw;">
     </div>
   </div>
-
+    <div class="footer">  
+    </div>
+</div>
 {% endblock %}
