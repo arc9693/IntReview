@@ -83,7 +83,6 @@ nav{
 
 .CompanyForm #submit{
   min-width: 20%;
-  border: none;
   padding: 5px;
 }
 .CompanyForm #submit:hover{
@@ -127,3 +126,9 @@ nav{
   color:white;
 }
 
+/*LOGIN PAGE*/
+.loginCard{
+  max-width: 400px;
+  border-top:3px solid #34495E;
+  box-shadow: 1px 1px 1px #bbb;
+}
