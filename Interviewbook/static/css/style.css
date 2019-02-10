@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Cedarville+Cursive');
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 @import url('https://fonts.googleapis.com/css?family=Lobster|Satisfy');
+@import url('https://fonts.googleapis.com/css?family=Rajdhani');
 body{
   background-color: #f3f3f3;
   max-width: 100vw;
@@ -110,13 +111,16 @@ nav{
   background: #ffffff;
   box-shadow: 1px 1px 1px #bbb;
 }
-
+.numHit{
+  font-family: 'Rajdhani', sans-serif;
+}
 
  /*SUBMIT QUESTION PAGE*/
 .responseFormTitle{
     color:#34495E;
  }
 .formSubmit{
+  background-color: #ffffff;
   box-shadow:1px 1px 1px #bbb; 
 }
 .submitBtn{
@@ -129,6 +133,19 @@ nav{
 /*LOGIN PAGE*/
 .loginCard{
   max-width: 400px;
-  border-top:3px solid #34495E;
+  border-top:3px solid #127BC4;
   box-shadow: 1px 1px 1px #bbb;
+}
+
+/*SIGN PAGE*/
+.signContainer{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top:3px solid #127BC4;
+    box-shadow: 1px 1px 1px #bbb; 
+    max-width:500px;
+    margin-left:auto;
+    margin-right: auto;
 }
