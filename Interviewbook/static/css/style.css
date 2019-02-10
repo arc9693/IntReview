@@ -82,6 +82,9 @@ nav{
   width: -moz-available;
 }
 
+
+
+/*COMPANY FORM PAGE*/
 .CompanyForm #submit{
   min-width: 20%;
   padding: 5px;
@@ -89,16 +92,22 @@ nav{
 .CompanyForm #submit:hover{
     background-color: #ffc107;
 }
-
 .CompanyForm #id_name{
     width: 100%;
 }
-
+.CompanyForm{
+    border-top:3px solid #34495E; 
+    margin:6vw;
+    padding:3vw;
+    box-shadow: 1px 1px 1px #bbb;
+    background-color: #ffffff;
+}
 #id_questions , #responseQuestions{
   display: inherit;
   width: 100%;
   min-height: 30vh;
 }
+
 
 
 /*RESPONSES.HTML*/
