@@ -58,20 +58,7 @@ nav{
   color:#fff;
 }
 #Exp{
-  /*background-color: #565656;*/
-  /*color:white;
-  text-shadow: 0 0 20px rgba(198,28,39,0.8), 0 0 0 black;
-  text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
-  -webkit-background-clip: text;
-     -moz-background-clip: text;
-          background-clip: text;*/
-    /*font: bold 100px arial, sans-serif; */
-  /*background-color: #34495e;*/
   color: #127BC4;
-  /*text-shadow: 2px 2px 3px #74b9ff;
-  -webkit-background-clip: text;
-     -moz-background-clip: text;
-          background-clip: text;*/
   font-size: 130%;
 }
 #deskImg{
@@ -92,13 +79,6 @@ nav{
 }
 .newResponse input{
   width: -moz-available;
-}
-.newResponse #submit{
-  border: none;
-  padding: 5px;
-}
-.newResponse #submit:hover{
-    background-color: #ffc107;
 }
 
 .CompanyForm #submit{
@@ -121,11 +101,7 @@ nav{
 }
 
 
-
-#listq:hover{
-  /*box-shadow:1px 1px 1px grey;*/
-  /*background-color: #ddd;*/
-}
+/*RESPONSES.HTML*/
 #line{
   width:100%;
   color:black;
@@ -135,3 +111,19 @@ nav{
   background: #ffffff;
   box-shadow: 1px 1px 1px #bbb;
 }
+
+
+ /*SUBMIT QUESTION PAGE*/
+.responseFormTitle{
+    color:#34495E;
+ }
+.formSubmit{
+  box-shadow:1px 1px 1px #bbb; 
+}
+.submitBtn{
+  width:100px;
+}
+.needLoginBtn:hover{
+  color:white;
+}
+
