@@ -2,40 +2,36 @@
 {% load widget_tweaks %}
 
 {% block content %}
-	<div class="card mt-4 text-primary signContainer">
-	<center>
-	<!-- /*POSITIONING YET TO BE DONE*/	 -->
+	<div class="card mt-4 text-dark signContainer">
 	  <h2 class="text-center mt-2" style="color:#34495E;">Sign up</h2><hr>
 	  <form method="post">
 	    {% csrf_token %}
 	    <p>
-	    	<div class="row ml-3 align-item-center">
-	          <div class="col-sm-12 col-lg-4">
-	          {{ form.username.label_tag }}
-	          </div>
-	          <div class="col-sm-12 col-lg-8 mb-2">
-	          {% render_field form.username class="form-control isValid" placeholder="Enter Username" %}
-	          </div><br>
-	      	</div>
-	      	<div class="row ml-3">
-	          <div class="col-sm-12 col-lg-4">
-	          {{ form.password1.label_tag }}
-	          </div>
-	          <div class="col-sm-12 col-lg-8 mb-2">
-	          {% render_field form.password1 class="form-control isValid" placeholder="Enter Password" %}
-	          </div><br>
-	      	</div>
-	      	<div class="row ml-3">
-	          <div class="col-sm-12 col-lg-4">
-	          {{ form.password2.label_tag }}
-	          </div>
-	          <div class="col-sm-12 col-lg-8 mb-2">
-	          {% render_field form.password2 class="form-control isValid" placeholder="Re-enter Password" %}
-	          </div><br>
-	      	</div>
-	    </p>
-	    <center><button class="btn btn-outline-success mb-5" type="submit">Sign up</button></center>
+		  {% for field in form.visible_fields %}
+		    <div class="form-group row ml-3">
+		      <div class="col-sm-12 col-lg-4">	
+		      {{ field.label_tag }}
+		  	  </div>
+		  	  <div class="col-sm-12 col-lg-8">
+		      {% if form.is_bound %}
+		        {% if field.errors %}
+		          {% render_field field class="form-control is-invalid" %}
+		          {% for error in field.errors %}
+		            <div class="invalid-feedback">
+		              {{ error }}
+		            </div>
+		          {% endfor %}
+		        {% else %}
+		          {% render_field field class="form-control is-valid" %}
+		        {% endif %}
+		      {% else %}
+		        {% render_field field class="form-control" style="max-height:80px;"%}
+		      {% endif %}
+		  		</div>
+		    </div>
+		  {% endfor %}
+		</p>
+	    <center><button class="btn btn-success mb-5" type="submit">Sign up</button></center>
 	  </form>
-	</center>
 	</div>
 {% endblock %}
