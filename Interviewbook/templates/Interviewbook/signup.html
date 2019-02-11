@@ -1,10 +1,37 @@
 {% extends 'Interviewbook/base.html' %}
+{% load widget_tweaks %}
 
 {% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign up</button>
-  </form>
+	<div class="card mt-4 text-dark signContainer">
+	  <h2 class="text-center mt-2" style="color:#34495E;">Sign up</h2><hr>
+	  <form method="post">
+	    {% csrf_token %}
+	    <p>
+		  {% for field in form.visible_fields %}
+		    <div class="form-group row ml-3">
+		      <div class="col-sm-12 col-lg-4">	
+		      {{ field.label_tag }}
+		  	  </div>
+		  	  <div class="col-sm-12 col-lg-8">
+		      {% if form.is_bound %}
+		        {% if field.errors %}
+		          {% render_field field class="form-control is-invalid" %}
+		          {% for error in field.errors %}
+		            <div class="invalid-feedback">
+		              {{ error }}
+		            </div>
+		          {% endfor %}
+		        {% else %}
+		          {% render_field field class="form-control is-valid" %}
+		        {% endif %}
+		      {% else %}
+		        {% render_field field class="form-control" style="max-height:80px;"%}
+		      {% endif %}
+		  		</div>
+		    </div>
+		  {% endfor %}
+		</p>
+	    <center><button class="btn btn-success mb-5" type="submit">Sign up</button></center>
+	  </form>
+	</div>
 {% endblock %}

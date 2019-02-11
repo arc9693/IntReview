@@ -1,54 +1,169 @@
 @import url('https://fonts.googleapis.com/css?family=Cedarville+Cursive');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import url('https://fonts.googleapis.com/css?family=Lobster|Satisfy');
+@import url('https://fonts.googleapis.com/css?family=Rajdhani');
 body{
-  background-color: #ffc107;
+  background-color: #f3f3f3;
   max-width: 100vw;
+  font-family: 'PT Sans'; 
 }
+
+
+/*BASE.HTML FILE STYLING*/
 #home{
-  background-image: url('../images/3.jpg');
   background-size: 100% 100%;
   min-height: 95vh;
   background-repeat: no-repeat;
 }
-.navbar-brand
-{
+nav{
+  box-shadow: 0px 1px 10px 0.1px #b1b1b1;
+  background-color:#34495e;
+  color:white;
+}
+.navbar-brand{
   font-family: 'Cedarville Cursive', cursive;
 }
+.navBtn{
+  background: #34495e;
+  color:#ddd;
+}
+.navBtn:hover{
+  color:white;
+}
+.footer{
+  background:linear-gradient(166deg, #f3f3f3 30%, rgba(255,0,0,0) 10%),
+             linear-gradient(150deg, #ccc 90%, #ccc 1%),
+             linear-gradient(45deg, #ccc 95%, rgba(0,0,255,0) 30%);
+  width:100%;
+  height:25vw;
+  z-index:-1;
+  position: absolute;
+  bottom:-20px;
+  left:0px;
+}
+
+
+/*INDEX.HTML FILE STYLING*/
+#title{
+  color:#00BFFF;
+  font-size: 300%;
+}
+.buttonLink{
+  background-color:#34495e;
+  color:#ddd;
+  border-radius: 25px;
+  box-shadow: 0px 3px 10px 0.1px #b1b1b1;
+  vertical-align: middle;
+}
+.buttonLink:hover{
+  color:#fff;
+}
+#Exp{
+  color: #127BC4;
+  font-size: 130%;
+}
+#deskImg{
+  max-height:90vh;
+  max-width:90vw;
+}
+
+
+/*FORMS STYLING*/
 .form-control {
-	width: auto;
+  width: auto;
 }
 .options i:hover{
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 .newResponse select{
-
-	width: -moz-available;
+  width: -moz-available;
 }
 .newResponse input{
-	width: -moz-available;
-}
-.newResponse #submit{
-  border: none;
-  padding: 5px;
-}
-.newResponse #submit:hover{
-    background-color: #ffc107;
+  width: -moz-available;
 }
 
+
+
+/*COMPANY FORM PAGE*/
 .CompanyForm #submit{
   min-width: 20%;
-  border: none;
   padding: 5px;
 }
 .CompanyForm #submit:hover{
     background-color: #ffc107;
 }
-
 .CompanyForm #id_name{
     width: 100%;
 }
-
+.CompanyForm{
+    border-top:3px solid #34495E; 
+    margin:6vw;
+    padding:3vw;
+    box-shadow: 1px 1px 1px #bbb;
+    background-color: #ffffff;
+}
 #id_questions , #responseQuestions{
-	display: inherit;
-	width: 100%;
+  display: inherit;
+  width: 100%;
   min-height: 30vh;
+}
+
+
+
+/*RESPONSES.HTML*/
+#line{
+  width:100%;
+  color:black;
+}
+
+#loginCard{
+  background: #ffffff;
+  box-shadow: 1px 1px 1px #bbb;
+}
+.numHit{
+  font-family: 'Rajdhani', sans-serif;
+}
+
+ /*SUBMIT QUESTION PAGE*/
+.responseFormTitle{
+    color:#34495E;
+ }
+.formSubmit{
+  background-color: #ffffff;
+  box-shadow:1px 1px 1px #bbb; 
+}
+.submitBtn{
+  width:100px;
+}
+.needLoginBtn:hover{
+  color:white;
+}
+
+/*LOGIN PAGE*/
+.loginCard{
+  max-width: 400px;
+  border-top:3px solid #127BC4;
+  box-shadow: 1px 1px 1px #bbb;
+}
+
+/*SIGN PAGE*/
+.signContainer{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top:3px solid #127BC4;
+    box-shadow: 1px 1px 1px #bbb; 
+    max-width:500px;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+/*RESPONSE.HTML PAGE*/
+.takeResponseCard{
+  box-shadow:1px 1px 1px grey;
+  background-color: #ffffff; 
+  margin-left:auto; 
+  margin-right:auto;
+  color:#127BC4;
 }

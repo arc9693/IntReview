@@ -1,18 +1,73 @@
 {% extends 'Interviewbook/base.html' %}
+{% load widget_tweaks %}
 
 {% block content %}
 <div class="container-fluid">
   <div class="row d-flex justify-content-end mt-2 mr-2 mb-0">
-    <a href="/response/new/addCompany" target="_top"><button class="btn btn-sm btn-dark" type="button" name="button">Add a company</button></a>
+    <a href="/response/new/addCompany" target="_top"><button class="btn btn-sm btn-light border" type="button" name="button">Add a company</button></a>
   </div>
-  <form method="post" class="ml-lg-5 mr-lg-5 mb-lg-5 mt-lg-2 m-1  bg-dark text-warning p-lg-5 p-3 newResponse">
+  <form method="post" class="ml-lg-5 mr-lg-5 mb-lg-5 mt-lg-2 m-1 text-primary p-lg-5 p-1 newResponse card formSubmit">
     {% csrf_token %}
-    {{ form.as_p }}<br>
-    {% if user.is_authenticated %}
-    <input type="submit" name="submit" value="Upload" id="submit">
-    {% else %}
-    <a href="{% url 'login' %}"><button class="btn btn-sm btn-outline-warning my-2 my-sm-0"> You neeed to Login first!</button></a>
-    {% endif %}
+    <center>
+      <h1 id="responseFormTitle"
+      style="color:#34495E;">Add a Question</h1> <hr><br>
+    </center>
+      <!-- {{ form.as_p }} -->
+      <p>
+        <div class="row ml-2 ml-lg-5">
+          <div class="col-sm-4 col-lg-2">
+          {{ form.company.label_tag }}
+          </div>
+          <div class="col-sm-8 col-lg-10 mb-2">
+          {% render_field form.company class="form-control" placeholder="Enter Company Name" %}
+          </div><br>
+
+          <div class="col-sm-4 col-lg-2">
+          {{ form.job_profile.label_tag }}
+          </div>
+          <div class="col-sm-8 col-lg-10 mb-2">
+          {% render_field form.job_profile class="form-control" placeholder="Enter Job Profile" %}
+          </div><br>
+
+          <div class="col-sm-4 col-lg-2">
+          {{ form.rounds.label_tag }}
+          </div>
+          <div class="col-sm-8 col-lg-10 mb-2">
+          {% render_field form.rounds class="form-control" placeholder="Rounds" %}
+          </div><br>
+
+          <div class="col-sm-4 col-lg-2">
+          {{ form.questions.label_tag }}
+          </div>
+          <div class="col-sm-8 col-lg-10 mb-2">
+          {% render_field form.questions class="form-control" placeholder="Enter Question" %}
+          </div><br>
+
+          <div class="col-sm-4 col-lg-2">
+          {{ form.compensation.label_tag }}
+          </div>
+          <div class="col-sm-8 col-lg-10 mb-2">
+          {% render_field form.compensation class="form-control" placeholder="Enter Compensation" %}
+          </div><br>
+
+          <div class="col-sm-4 col-lg-2">
+          {{ form.rating.label_tag }}
+          </div>
+          <div class="col-sm-8 col-lg-10 mb-2">
+          {% render_field form.rating class="form-control" placeholder="Rate" %}
+          </div><br>
+        </div>
+      </p>
+    <br>
+    <center>
+      {% if user.is_authenticated %}
+      <input class="btn btn-sm btn-outline-success submitBtn" type="submit" name="submit" value="Upload" id="submit">
+      {% else %}
+      <a href="{% url 'login' %}">
+        <button class="btn btn-sm btn-outline-warning my-2 my-sm-0 needLoginBtn"> You need to Login first!</button>
+      </a>
+      {% endif %}
+    </center>
   </form>
 </div>
 

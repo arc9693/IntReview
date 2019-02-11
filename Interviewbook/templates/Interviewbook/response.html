@@ -1,31 +1,36 @@
 {% extends 'Interviewbook/base.html' %}
 
 {% block content %}
-<div class="container m-lg-5 m-0 p-3">
-  <div class="bg-dark text-warning p-1">
-    <div class="border border-warning">
-          <div class="row m-3">
-            Name : {{response.name}}
+<div class="container p-5">
+  <div class="card takeResponseCard">
+      <div class="row m-1" >
+        <div class="col-sm-12 col-lg-10 mt-lg-4">
+          <div name="name" class="card mt-1 p-2 ml-1 bg-light text-dark" readonly id="responseQuestions">{{response.questions}}</div>
+        </div>
+        <div class="col-sm-12 col-lg-2 mt-lg-3" >
+          <div class="row m-3  text-bold">
+            <span class="text-dark"><i class="fas fa-building"></i></span>&nbsp;
+            <strong> {{response.company}}</strong>
           </div>
           <div class="row m-3">
-            Company : {{response.company}}
+            <span class="text-dark"><i class="fas fa-star"></i></span>&nbsp; 
+            <strong>{{response.rating}}</strong>
           </div>
           <div class="row m-3">
-            Job Profile : {{response.job_profile}}
+            <span class="text-dark"><i class="fas fa-user"></i></span>&nbsp; 
+            <strong>{{response.name}}</strong>
+          </div>
+        </div>
+          <div class="row m-3">
+            <strong><span class="text-dark">Job Profile</span> : {{response.job_profile}}</strong>
           </div>
           <div class="row m-3">
-            Compensation in INR: {{response.compensation}}
+            <strong><span class= "text-dark">Compensation</span> : Rs.{{response.compensation}}</strong>
           </div>
           <div class="row m-3">
-            No of rounds : {{response.rounds}}
+            <strong><span class="text-dark">No of rounds</span> : {{response.rounds}}</strong>
           </div>
-          <div class="row m-3">
-            Questions : <textarea name="name" class="ml-1 bg-light text-dark" readonly id="responseQuestions">{{response.questions}}</textarea>
-          </div>
-          <div class="row m-3">
-            Rating : {{response.rating}}
-          </div>
-    </div>
+      </div>
   </div>
 </div>
 
