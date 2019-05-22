@@ -19,4 +19,5 @@ from django.urls import include, path
 urlpatterns = [
     path('', include('Interviewbook.urls')),
     path('admin/', admin.site.urls),
+    path(r'^oauth/', include('social_django.urls', namespace='social')),
 ]

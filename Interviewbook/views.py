@@ -28,7 +28,7 @@ def signup(request):
     return render(request, 'Interviewbook/signup.html', {'form': form})
 
 def login_view(request):
-    _message = 'Log in'
+    _message = False
     if request.method == 'POST':
         _username = request.POST['username']
         _password = request.POST['password']
