@@ -76,7 +76,7 @@ def updateResponse(request, response_id):
     instance = get_object_or_404(InterviewResponse, id=response_id)
     form = ResponseForm(request.POST or None, instance=instance)
     if form.is_valid() and instance.name.pk==request.user.pk:
-        form.save()
+        form.save(user_id=request.user.pk)
         return redirect('index')
     return render(request, 'Interviewbook/Responseform.html', {'form': form})
 
