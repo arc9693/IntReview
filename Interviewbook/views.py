@@ -67,9 +67,26 @@ def ListResponsesbyCompany(request):
 
 
 def viewResponse(request, response_id):
-    response = get_object_or_404(InterviewResponse, id=response_id)
-    response.increase()
-    return render(request, 'Interviewbook/response.html', {'response': response})
+   # response = get_object_or_404(InterviewResponse, id=response_id)
+   #response.increase()
+   # return render(request, 'Interviewbook/response.html', {'response': response})
+   response = get_object_or_404(InterviewResponse, id=response_id)
+   comments = response.comments.filter(active=True)
+   comment_form = CommentForm()
+   new_comment = None
+   new_reply = None
+   if request.method == 'POST':
+       comment_form = CommentForm(data=request.POST)
+       if comment_form.is_valid():
+           if not (request.user.is_authenticated):
+               return render(request, 'Interviewbook/login.html')
+           new_comment = comment_form.save(commit=False)
+           new_comment.response = response
+           new_comment.username = request.user.username
+           new_comment.created_on = timezone.now()
+           new_comment.active = True
+           new_comment = comment_form.save()
+   return render(request, 'Interviewbook/response.html', { 'response': response, 'comments': comments,'new_comment':new_comment, 'comment_form':comment_form })
 
 @login_required(login_url='login')
 def updateResponse(request, response_id):

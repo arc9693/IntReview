@@ -26,3 +26,18 @@ class InterviewResponse(models.Model):
     def increase(self):
         self.hits += 1
         self.save()
+
+class Comment(models.Model):
+    response = models.ForeignKey(InterviewResponse, on_delete=models.CASCADE, related_name='comments')
+    username = models.CharField(max_length=200)
+    body = models.TextField(null=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=True)
+    replies = models
+
+    class Meta:
+        ordering = ['created_on']
+
+    def __str__(self):
+        return 'Comment {} by {}'.format(self.body, self.username)
+
