@@ -63,9 +63,10 @@
       {% if user.is_authenticated %}
       <input class="btn btn-sm btn-outline-success submitBtn" type="submit" name="submit" value="Upload" id="submit">
       {% else %}
-      <a href="{% url 'login' %}">
-        <button class="btn btn-sm btn-outline-warning my-2 my-sm-0 needLoginBtn"> You need to Login first!</button>
-      </a>
+        <a href="{% url 'login' %}" class="btn btn-sm btn-outline-warning my-2 my-sm-0 needLoginBtn">
+        <strong>You need to Login first!</strong>
+        </a>
+
       {% endif %}
     </center>
   </form>
